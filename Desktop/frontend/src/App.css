@@ -1,0 +1,107 @@
+/* Root Element */
+:root {
+  --primary-color: #3b5998; /* Facebook mavi tonu */
+  --secondary-color: #8b9dc3;
+  --active-color: #2d4373;
+  --background-color: #f0f2f5; /* Soft ve klasik arka plan rengi */
+  --text-color-dark: #1c1e21; /* Koyu yazı rengi */
+  --text-color-light: #ffffff; /* Beyaz yazı rengi */
+  --button-radius: 12px; /* Buton yuvarlaklığı */
+  --button-padding: 1em 2em; /* Buton padding */
+  --font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --heading-font-size: 3.5em; /* Başlık font boyutu */
+  --button-font-size: 1.2em; /* Buton font boyutu */
+  --p-font-size: 1.3em; /* Paragraf font boyutu */
+}
+
+/* General Styles */
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  justify-content: center;
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color-dark);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Root Container */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 3rem; /* Padding genişletildi */
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Heading Styles */
+h1 {
+  font-size: var(--heading-font-size);
+  font-weight: bold;
+  color: var(--primary-color);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Hafif gölge */
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+}
+
+/* Button Styles */
+button {
+  border-radius: var(--button-radius);
+  border: none;
+  padding: var(--button-padding);
+  font-size: var(--button-font-size);
+  font-weight: 600;
+  background-color: var(--primary-color);
+  color: var(--text-color-light);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-3px); /* Hover'da biraz yükseliyor */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px solid var(--primary-color);
+}
+
+button:active {
+  background-color: var(--active-color);
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Paragraph Styles */
+p {
+  color: var(--text-color-dark);
+  font-size: var(--p-font-size);
+  margin-top: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+/* Light Mode Styles */
+@media (prefers-color-scheme: light) {
+  :root {
+    color: var(--text-color-dark);
+    background-color: #ffffff;
+  }
+  button {
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+  }
+  button:hover {
+    background-color: var(--secondary-color);
+  }
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color-dark);
+  }
+}
